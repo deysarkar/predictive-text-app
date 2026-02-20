@@ -45,10 +45,9 @@ function addWord(word) {
     let text = input.value.trim();
     let words = text.split(" ");
 
-    // Replace last word OR add new
     words[words.length - 1] = word;
 
     input.value = words.join(" ") + " ";
 
-    handleTyping(); // keep predictions going
+    handleTyping();
 }
