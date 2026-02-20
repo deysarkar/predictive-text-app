@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>iPhone Predictive Keyboard</title>
+    <title>Predictive Text</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="phone">
+<div class="container">
 
-    <div id="display"></div>
+    <h2>Predictive Text</h2>
+
+    <input 
+        type="text" 
+        id="inputBox" 
+        placeholder="Start typing..."
+        onkeyup="handleTyping()"
+    />
 
     <div id="predictionBar"></div>
-
-    <div class="keyboard" id="keyboard"></div>
 
 </div>
 
