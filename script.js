@@ -1,4 +1,4 @@
-function handleTyping() {
+async function handleTyping() {
     let text = document.getElementById("inputBox").value;
 
     if (text.length === 0) {
@@ -6,10 +6,17 @@ function handleTyping() {
         return;
     }
 
-    // TEMP FAKE DATA (replace later with backend)
-    let predictions = ["is", "was", "will"];
+    let response = await fetch("https://kaylin-shrimplike-erica.ngrok-free.dev/predict", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ text: text })
+    });
 
-    renderPredictions(predictions);
+    let data = await response.json();
+
+    renderPredictions(data.predictions);
 }
 
 function renderPredictions(words) {
